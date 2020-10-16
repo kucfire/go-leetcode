@@ -4,6 +4,12 @@
 
 package leetcode001
 
+/*
+	problem
+	1. 零值判断
+	2. 多种解法（map、暴力解法——二重循环）
+*/
+
 //method of violence
 func twoSum(nums []int, target int) []int {
 	// var res []int

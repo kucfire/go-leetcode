@@ -17,6 +17,12 @@ type ListNode struct {
 	Next *ListNode
 }
 
+/*
+	need to solve problem
+	1. zero value
+	2. into a digit(进位取值)
+*/
+
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	tmp := new(ListNode)
 	result := tmp
