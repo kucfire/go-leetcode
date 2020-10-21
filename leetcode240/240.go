@@ -16,15 +16,18 @@ func SearchMatrix(matrix [][]int, target int) bool {
 
 //binary search
 func SearchMatrix2(matrix [][]int, target int) bool {
+	if len(matrix) == 0 {
+		return false
+	}
 	x, y, mid := 0, len(matrix[0])-1, 0
 	for i := 0; i < len(matrix); i++ {
-		for x < y {
+		for x <= y {
 			mid = x + (y-x)/2
 			if matrix[i][mid] == target {
 				return true
-			} else if matrix[i][mid] > target {
-				x = mid + 1
 			} else if matrix[i][mid] < target {
+				x = mid + 1
+			} else if matrix[i][mid] > target {
 				y = mid - 1
 			}
 		}
@@ -33,3 +36,5 @@ func SearchMatrix2(matrix [][]int, target int) bool {
 	}
 	return false
 }
+
+//

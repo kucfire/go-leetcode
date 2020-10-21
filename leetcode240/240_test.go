@@ -19,7 +19,7 @@ func TestSearchMatrix(t *testing.T) {
 			{3, 6, 9, 16, 22},
 			{10, 13, 14, 17, 24},
 			{18, 21, 23, 26, 30},
-		}, 25, false},
+		}, 20, false},
 	}
 
 	for i, data := range datas {
