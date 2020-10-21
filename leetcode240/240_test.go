@@ -22,9 +22,9 @@ func TestSearchMatrix(t *testing.T) {
 		}, 25, false},
 	}
 
-	for _, data := range datas {
-		if actual := SearchMatrix(data.tasks, data.target); actual != data.result {
-			t.Errorf("got %v, but exoect %v", actual, data.result)
+	for i, data := range datas {
+		if actual := SearchMatrix2(data.tasks, data.target); actual != data.result {
+			t.Errorf("%d, got %v, but exoect %v", i, actual, data.result)
 		}
 	}
 }
