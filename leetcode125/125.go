@@ -1,3 +1,7 @@
+/*
+	leetcode tag:125 title:验证回文串
+*/
+
 package leetcode125
 
 import "strings"
