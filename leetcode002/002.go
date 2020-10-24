@@ -2,7 +2,7 @@
 	leetcode tag:002 title:两数之和
 */
 
-package leetcode
+package leetcode002
 
 /**
  * Definition for singly-linked list.
