@@ -4,7 +4,7 @@
 
 package leetcode887
 
-//method of Li yongle
+// SuperEggDrop : method of Li yongle
 func SuperEggDrop(K int, N int) int {
 	// create a binary array whitch have K+1 array and each array have N elements
 	// 创建一个二元数组，数组长度为K，每个子数组里面有N个元素
@@ -50,7 +50,7 @@ func SuperEggDrop(K int, N int) int {
 	return result[N][K]
 }
 
-//method of normal dp
+// SuperEggDrop2 : method of normal dp
 func SuperEggDrop2(K int, N int) int {
 	max := func(x, y int) int {
 		if x > y {
@@ -92,7 +92,7 @@ func SuperEggDrop2(K int, N int) int {
 	return result[N][K]
 }
 
-// method of encode
-func SuperEggDrop3(K int, N int) int {
+// // method of encode
+// func SuperEggDrop3(K int, N int) int {
 
-}
+// }
