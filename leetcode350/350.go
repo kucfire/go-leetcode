@@ -1,3 +1,7 @@
+/*
+	leetcode tag:350 title:两个数组的交集
+*/
+
 package leetcode350
 
 import "sort"
