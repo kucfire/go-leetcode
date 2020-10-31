@@ -4,6 +4,7 @@
 
 package leetcode007
 
+// Reverse : normal method
 func Reverse(x int) int {
 	result := 0
 	// tmp := 0
