@@ -6,6 +6,7 @@ package leetcode125
 
 import "strings"
 
+// IsPalindrome : normal method
 func IsPalindrome(s string) bool {
 	s = strings.ToLower(s)
 	isalnum := func(str byte) bool {
