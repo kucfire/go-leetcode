@@ -10,7 +10,7 @@ func firstBadVersion(n int) int {
 	head := 0
 	tail := n
 	mid := 0
-	for head < tail {
+	for head <= tail {
 		mid = head + (tail-head)/2
 		if isBadVersion(mid) {
 			if !isBadVersion(mid - 1) {
