@@ -12,7 +12,7 @@ func ClimbStairs(n int) int {
 	return ClimbStairs(n-1) + ClimbStairs(n-2)
 }
 
-// ClimbStairs : method of array
+// ClimbStairs2 : method of array
 func ClimbStairs2(n int) int {
 	res := []int{1, 1}
 	for i := 2; i <= n; i++ {
