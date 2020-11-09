@@ -24,7 +24,7 @@ func Rob(nums []int) int {
 
 	first, second := nums[0], max(nums[0], nums[1])
 	for i := 2; i < len(nums); i++ {
-		first, second = second, max(first+nums[i], second)
+		first, second = second, max(first+nums[i], second) // 将i-1的值赋给first，而second则将i-2跟first对应的值之和跟second当前对应的值进行比较
 	}
 
 	return second
