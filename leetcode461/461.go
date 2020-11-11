@@ -6,6 +6,7 @@ package leetcode461
 
 import "fmt"
 
+// HammingDistance : bit operation
 func HammingDistance(x int, y int) int {
 	var result int
 
