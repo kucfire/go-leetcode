@@ -19,9 +19,9 @@ func MissingNumber(nums []int) int {
 // MissingNumber2 : normal method
 func MissingNumber2(nums []int) int {
 	var result int
-	for i, num := range nums {
-		result ^= num ^ i
-		fmt.Println(result)
+	result = len(nums) * (len(nums) + 1) / 2
+	for _, v := range nums {
+		result -= v
 	}
-	return result ^ len(nums)
+	return result
 }
