@@ -5,7 +5,7 @@ package nowCoderHJ1
 
 import "strings"
 
-// normal method , fail
+// LastWordLen : normal method , fail
 func LastWordLen(s string) int {
 	var result []string
 	tmpWord := ""
@@ -28,7 +28,7 @@ func LastWordLen(s string) int {
 	return len(result[len(result)-1])
 }
 
-// strings.Split , fail
+// LastWordLen2 : strings.Split , fail
 func LastWordLen2(s string) int {
 	if len(s) == 0 || s == " " {
 		return 0
@@ -38,7 +38,7 @@ func LastWordLen2(s string) int {
 
 }
 
-// 从后往前遍历
+// LastWordLen3 : 从后往前遍历
 func LastWordLen3(s string) int {
 	if len(s) == 0 {
 		return 0
