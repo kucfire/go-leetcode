@@ -1,0 +1,29 @@
+/*
+SQL笔试题:
+
+* class: 班级
+    * class_id: 班级ID
+    * class_name: 班级名
+* score: 分数表
+    * student_id: 学生ID
+    * student_name: 学生名
+    * class_id: 班级ID
+    * subject: 科目
+    * score: 分数
+根据以上两张表, 请写出如下查询:
+
+* 查询出所有科平均分数大于80分的学生. 结果要包含如下字段: 学生名, 平均分数
+* 查询所有学生的”数学”科目的分数, 并且按分数从高到低排序. 结果要包含如下字段: 班级名, 学生名, 数学分数
+*/
+
+(1)
+select student_name, avg(score) as avg_score
+from score
+group by student_id                             //避免同名,不能用student_name
+having avg_score >= 80
+
+(2)
+select class.class_name, socre.student_name, score 
+from score, class
+where class_id = socre.class_id and socre.subject = "数学"
+order by desc
