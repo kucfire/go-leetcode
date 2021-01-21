@@ -25,3 +25,26 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	second.Next = second.Next.Next
 	return result.Next
 }
+
+// method of double points
+func removeNthFromEnd2(head *ListNode, n int) *ListNode {
+	result := &ListNode{}
+	result.Next = head
+	pre := head
+	cur := head
+	count := 0
+	for pre != nil {
+		count++
+		if count > n {
+			cur = cur.Next
+		}
+		pre = pre.Next
+	}
+
+	if count == n {
+		return head
+	}
+	cur.Next = cur.Next.Next
+
+	return result.Next
+}
