@@ -1,5 +1,9 @@
 package leetcode347
 
+import (
+	"container/heap"
+)
+
 func TopKFrequent(nums []int, k int) []int {
 	// 计数
 	arrayMap := make(map[int]int)
@@ -52,3 +56,52 @@ func TopKFrequent(nums []int, k int) []int {
 
 	return arrayList[:k]
 }
+
+// --------------------------------------------------------
+// 堆排序
+func TopKFrequent2(nums []int, k int) []int {
+	// 计数
+	arrayMap := make(map[int]int)
+	for _, num := range nums {
+		arrayMap[num]++
+	}
+
+	r := &result{}
+	heap.Init(r)
+	for key, value := range arrayMap {
+		heap.Push(r, [2]int{key, value})
+		if r.Len() > k {
+			heap.Pop(r)
+		}
+	}
+
+	result := make([]int, k)
+	for i := 0; i < k; i++ {
+		result[k-i-1] = heap.Pop(r).([2]int)[0]
+	}
+
+	return result
+}
+
+type result [][2]int
+
+func (r result) Len() int {
+	return len(r)
+}
+func (r result) Less(x, y int) bool {
+	return r[x][1] < r[y][1]
+}
+func (r result) Swap(x, y int) {
+	r[x], r[y] = r[y], r[x]
+}
+func (r *result) Push(x interface{}) {
+	*r = append(*r, x.([2]int))
+}
+func (r *result) Pop() interface{} {
+	len := len(*r)
+	result := (*r)[len-1]
+	*r = (*r)[:len-1]
+	return result
+}
+
+// --------------------------------------------------------
