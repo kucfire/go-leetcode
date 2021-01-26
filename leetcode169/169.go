@@ -11,7 +11,7 @@ import (
 	"sort"
 )
 
-// method of count
+// MajorityElementCount :method of count
 func MajorityElementCount(nums []int) int {
 	count, major := 0, 0
 	for _, num := range nums {
@@ -27,7 +27,7 @@ func MajorityElementCount(nums []int) int {
 	return major
 }
 
-// method of hashmap
+// MajorityElementHashmap :method of hashmap
 func MajorityElementHashmap(nums []int) int {
 	arrayMap := make(map[int]int)
 	for _, num := range nums {
@@ -41,13 +41,13 @@ func MajorityElementHashmap(nums []int) int {
 	return -1
 }
 
-// 排序
+// MajorityElementSort :排序
 func MajorityElementSort(nums []int) int {
 	sort.Ints(nums)
 	return nums[len(nums)/2]
 }
 
-// 位运算(不能用)
+// MajorityElementBit :位运算(不能用)
 func MajorityElementBit(nums []int) int {
 	result := 0
 	signals := 0
