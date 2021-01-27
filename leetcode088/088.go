@@ -7,9 +7,10 @@ package leetcode088
 import "sort"
 
 // normal method
-func merge(nums1 []int, m int, nums2 []int, n int) {
+func Merge(nums1 []int, m int, nums2 []int, n int) []int {
 	for i, j := m, 0; i < m+n && j < n; i, j = i+1, j+1 {
 		nums1[i] = nums2[j]
 	}
 	sort.Ints(nums1)
+	return nums1
 }

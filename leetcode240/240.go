@@ -1,5 +1,7 @@
 package leetcode240
 
+import "sort"
+
 //normal
 func SearchMatrix(matrix [][]int, target int) bool {
 	for _, v := range matrix {
@@ -37,4 +39,24 @@ func SearchMatrix2(matrix [][]int, target int) bool {
 	return false
 }
 
-//
+// sort and 二分查找
+func SearchMatrix3(matrix [][]int, target int) bool {
+	newMatrix := make([]int, 0)
+	for _, num := range matrix {
+		newMatrix = append(newMatrix, num...)
+	}
+
+	sort.Ints(newMatrix)
+	start, end, mid := 0, len(newMatrix), 0
+	for start <= end {
+		mid = (start + end) / 2
+		if newMatrix[mid] > target {
+			end = mid - 1
+		} else if newMatrix[mid] < target {
+			start = mid + 1
+		} else {
+			return true
+		}
+	}
+	return false
+}
