@@ -60,7 +60,7 @@ func SuperEggDrop2(K int, N int) int {
 	}
 
 	// create a binary array whitch have K+1 array and each array have N elements
-	// 创建一个二元数组，数组长度为K，每个子数组里面有N个元素
+	// 创建一个二元数组，数组长度为N，每个子数组里面有K+1个元素
 	result := make([][]int, N+1)
 	for i := range result {
 		result[i] = make([]int, K+1)
@@ -77,8 +77,8 @@ func SuperEggDrop2(K int, N int) int {
 			for left < right {
 				mid := left + (right-left+1)/2
 				breakCount := result[mid-1][j-1]
-				notBreakCOunt := result[i-mid][j]
-				if breakCount > notBreakCOunt {
+				notBreakCount := result[i-mid][j]
+				if breakCount > notBreakCount {
 					right = mid - 1
 				} else {
 					left = mid
