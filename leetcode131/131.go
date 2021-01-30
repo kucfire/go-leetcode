@@ -1,3 +1,7 @@
+/*
+	leetcode tag:131 title:分割回文串
+*/
+
 package leetcode131
 
 func Partition(s string) [][]string {
