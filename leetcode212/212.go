@@ -1,7 +1,10 @@
+/*
+	leetcode tag:212 title:搜索单词II
+*/
+
 package leetcode212
 
 func FindWords(board [][]byte, words []string) []string {
-	type arrayByte []byte
 	result := make([]string, 0)
 	m := len(board)    //1
 	n := len(board[0]) //2
@@ -12,27 +15,40 @@ func FindWords(board [][]byte, words []string) []string {
 		wordsMap[word] = false
 	}
 
+	signalMap := make([][]int, m)
+	for i := 0; i < m; i++ {
+		signalMap[i] = make([]int, n)
+	}
+
 	check := func(i, j int, word []byte) bool {
-		signal := -1
+		// signal 归零
+		for i := 0; i < m; i++ {
+			for j := 0; j < n; j++ {
+				signalMap[i][j] = 0
+			}
+		}
+
+		// signal := -1
 		for index, b := range word {
 			if index == 0 {
 				// 第一个字母检测过了，可以跳过
+				signalMap[i][j] = 1
 				continue
 			}
-			if i-1 >= 0 && board[i-1][j] == b && signal != i-1 {
-				signal = i
+			if i-1 >= 0 && board[i-1][j] == b && signalMap[i-1][j] != 1 {
+				signalMap[i-1][j] = 1
 				i = i - 1
 				continue
-			} else if i+1 < m && board[i+1][j] == b && signal != i+1 {
-				signal = i
+			} else if i+1 < m && board[i+1][j] == b && signalMap[i+1][j] != 1 {
+				signalMap[i+1][j] = 1
 				i = i + 1
 				continue
-			} else if j-1 >= 0 && board[i][j-1] == b && signal != j-1 {
-				signal = j
+			} else if j-1 >= 0 && board[i][j-1] == b && signalMap[i][j-1] != 1 {
+				signalMap[i][j-1] = 1
 				j = j - 1
 				continue
-			} else if j+1 < n && board[i][j+1] == b && signal != j+1 {
-				signal = j
+			} else if j+1 < n && board[i][j+1] == b && signalMap[i][j+1] != 1 {
+				signalMap[i][j+1] = 1
 				j = j + 1
 				continue
 			}

@@ -39,8 +39,14 @@ func TestFindWords(t *testing.T) {
 				{'a', 'f', 'g'},
 			},
 			[]string{"abcdefg", "gfedcbaaa", "eaabcdgfa", "befa", "dgc", "ade"},
-			[]string{"abcdefg","befa","eaabcdgfa","gfedcbaaa"},
+			[]string{"abcdefg", "befa", "eaabcdgfa", "gfedcbaaa"},
 		},
+		{
+			[][]byte{
+				{'a', 'a'},
+			},
+			[]string{"aaa"},
+			[]string{},
 		},
 	}
 
