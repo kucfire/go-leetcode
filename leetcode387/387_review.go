@@ -1,14 +1,16 @@
 package leetcode387
 
 func FirstUniqCharReview(s string) int {
-	sMap := make(map[rune]int)
-	for _, str := range s {
-		sMap[str]++
+	sArray := make([]int, 26)
+	for i := 0; i < len(s); i++ {
+		sArray[s[i]-'a'] = i
 	}
 
-	for i, str := range s {
-		if sMap[str] == 1 {
+	for i := 0; i < len(s); i++ {
+		if i == sArray[s[i]-'a'] {
 			return i
+		} else {
+			sArray[s[i]-'a'] = -1
 		}
 	}
 	return -1
