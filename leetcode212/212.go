@@ -4,6 +4,7 @@
 
 package leetcode212
 
+// FindWords : method of myself
 func FindWords(board [][]byte, words []string) []string {
 	result := make([]string, 0)
 	m := len(board)    //1
