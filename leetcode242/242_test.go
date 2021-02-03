@@ -17,3 +17,19 @@ func TestIsAnagram(t *testing.T) {
 		}
 	}
 }
+
+func TestIsAnagramReview(t *testing.T) {
+	datas := []struct {
+		s, t   string
+		result bool
+	}{
+		{"anagram", "nagaram", true},
+		{"rat", "car", false},
+	}
+
+	for _, data := range datas {
+		if actual := IsAnagramReview(data.s, data.t); actual != data.result {
+			t.Errorf("actually got %v, but expect %v", actual, data.result)
+		}
+	}
+}
