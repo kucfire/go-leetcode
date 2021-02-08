@@ -1,10 +1,12 @@
 package leetcode155
 
+import "math"
+
 /** initialize your data structure here. */
 func ConstructorReview() MinStack {
 	return MinStack{
 		stack:      []int{},
-		minElement: []int{},
+		minElement: []int{math.MaxInt32},
 	}
 }
 
